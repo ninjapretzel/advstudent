@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+Student Name: <%= @student.name %> <br>
+Student ID: <%= @student.studentid %> <br>
+Enrolled in <%= @student.sections.count %> sections <br>
+<% if @student.sections.count > 0 %>
+    <br><br>
+    Sections
+    <table>
+        <tr>
+            <td> CRN </td>
+            <td> Professor </td>
+            
+        </tr>
+            <% @student.sections.each do |section| %>
+                <tr>
+                    <td> <%= section.secid %> </td>
+                    <td> <%= section.professors.name %></td>
+                </tr>
+            <% end %>
+</table>
+<% end %>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
+
+
