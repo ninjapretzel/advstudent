@@ -6,7 +6,7 @@ class Course
   field :subject, type: String
   
   #Course id Ex. 4260
-  field :id, type: String
+  field :courseid, type: String
   
   #Course name Ex. Software Engineering Practices
   field :name, type: String
@@ -16,6 +16,16 @@ class Course
   
   
   has_many :sections
+  
+  validates_presence_of :subject
+  validates_presence_of :courseid
+  validates_presence_of :name
+  validates_presence_of :description
+  
+  validates_uniqueness_of :courseid
+  
+  #index({courseid: 1}, {unique: true})
+  #index({subject: 1})
   
   
 end

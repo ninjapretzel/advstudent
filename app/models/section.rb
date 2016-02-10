@@ -29,6 +29,15 @@ class Section
   has_and_belongs_to_many :students
   
   
+  validates_presence_of :secid
+  validates_presence_of :time
+  validates_presence_of :days
+  validates_presence_of :location
+  validates_presence_of :date_range
+  validates_presence_of :max_students
+  
+  
+  
   
   
 end
