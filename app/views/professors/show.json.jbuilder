@@ -1,1 +1,1 @@
-json.extract! @professor, :id, :created_at, :updated_at
+json.extract! @professor, :id, :profid, :name, :department

@@ -24,8 +24,8 @@ class Course
   
   validates_uniqueness_of :courseid
   
-  #index({courseid: 1}, {unique: true})
-  #index({subject: 1})
+  index({courseid: 1}, {unique: true, drop_dups: true})
+  index({subject: 1})
   
   
 end

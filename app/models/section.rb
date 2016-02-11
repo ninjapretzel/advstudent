@@ -32,11 +32,17 @@ class Section
   validates_presence_of :secid
   validates_presence_of :time
   validates_presence_of :days
+  
   validates_presence_of :location
   validates_presence_of :date_range
   validates_presence_of :max_students
   
+  validates_presence_of :course
+  validates_presence_of :professor
   
+  
+  
+  index({secid: 1}, {unique: true, drop_dups: true})
   
   
   

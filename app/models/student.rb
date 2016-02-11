@@ -18,7 +18,7 @@ class Student
   validates_uniqueness_of :name
   validates_uniqueness_of :studentid
   
-  index({name: 1}, {unique: true})
-  index({studentid: 1}, {unique: true})
+  index({name: 1}, {unique: true, drop_dups: true})
+  index({studentid: 1}, {unique: true, drop_dups: true})
   
 end
