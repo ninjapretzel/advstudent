@@ -15,6 +15,7 @@ db[:sections].drop
 
 Student.new(name: 'Kekit Kekus', studentid: '90012341248').save
 Student.new(name: 'Hugh Jass', studentid: '90012345678').save
+Student.new(name: 'George Lucas', studentid: '90011342678').save
 Student.new(name: 'Bob Saget', studentid: '90011345678').save
 
 Course.new(subject: 'MTH', courseid: '0001', name: 'Kindergarten Math', description: 'Really, now?').save

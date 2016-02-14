@@ -45,14 +45,15 @@ class StudentsController < ApplicationController
 		end
 	end
 	
+	# POST /students/1/enroll
 	def enroll
 		@section = Section.find(prams[:section_id])
 		section.students << @student
 		
 		
-		end
-		
-		
+	end
+	
+	
 	
 	
 	# PATCH/PUT /students/1
@@ -89,5 +90,9 @@ class StudentsController < ApplicationController
 		def student_params
 			# :advisors => []
 			params.require(:student).permit(:name, :studentid)
+		end
+		
+		def enroll_params
+			params.require(:section_id)
 		end
 end

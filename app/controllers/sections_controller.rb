@@ -29,7 +29,7 @@ class SectionsController < ApplicationController
     respond_to do |format|
       if @section.save
         format.html { redirect_to @section, notice: 'Section was successfully created.' }
-        format.json { render json: Section.all }
+        format.json { render index }
       else
         format.html { render :new }
         format.json { render json: @section.errors, status: :unprocessable_entity }

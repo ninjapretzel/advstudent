@@ -17,7 +17,18 @@ class Professor
   
   #Each professor is bound to their many students...
   #TBD: make this wrap through their sections
-  has_and_belongs_to_many :students
+  #has_and_belongs_to_many :students
+  def students
+	a = Array.new
+	
+	sections.each do |section|
+		section.students.each do |student|
+			a.push student._id unless a.include? student._id
+		end
+	end
+	
+	a
+  end
   
   validates_presence_of :name
   validates_presence_of :profid

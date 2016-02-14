@@ -10,7 +10,18 @@ class Student
   
   
   has_and_belongs_to_many :sections
-  has_and_belongs_to_many :professors
+  #has_and_belongs_to_many :professors
+  def professors
+	a = Array.new
+	
+	sections.each do |section|
+		section.professors.each do |prof|
+			a.push prof._id unless a.include? prof._id
+		end
+	end
+	
+	a
+  end
   
   validates_presence_of :name
   validates_presence_of :studentid

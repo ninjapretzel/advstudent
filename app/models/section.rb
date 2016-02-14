@@ -19,6 +19,10 @@ class Section
   #Maximum number of students that can enroll in this class
   field :max_students, type: Integer
   
+  def name 
+	course.subject + " " + course.courseid + " - " + secid
+  end
+  
   
   #Course that holds class/department information
   belongs_to :course
