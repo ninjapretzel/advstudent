@@ -15,6 +15,9 @@ class StudentsController < ApplicationController
 	# GET /students/new
 	def new
 		@student = Student.new
+		@student.studentid = '900'
+		@student.name = 'Enter Name Here'
+		
 	end
 
 	# GET /students/1/edit
@@ -47,7 +50,7 @@ class StudentsController < ApplicationController
 		section.students << @student
 		
 		
-	end
+		end
 		
 		
 	
