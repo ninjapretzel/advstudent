@@ -29,7 +29,7 @@ class ProfessorsController < ApplicationController
 		respond_to do |format|
 			if @professor.save
 				format.html { redirect_to @professor, notice: 'Professor was successfully created.' }
-				format.json { render json: Professor.all }
+				format.json { @professors = Professor.all }
 			else
 				format.html { render :new }
 				format.json { render json: @professor.errors, status: :unprocessable_entity }

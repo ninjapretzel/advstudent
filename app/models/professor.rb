@@ -22,8 +22,9 @@ class Professor
 	a = Array.new
 	
 	sections.each do |section|
-		section.students.each do |student|
-			a.push student._id unless a.include? student._id
+		section.students.each do |stud|
+			b = stud
+			a.push b unless a.include? b
 		end
 	end
 	

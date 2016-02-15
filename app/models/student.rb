@@ -8,16 +8,15 @@ class Student
   #student id number
   field :studentid, type: String 
   
-  
   has_and_belongs_to_many :sections
   #has_and_belongs_to_many :professors
   def professors
 	a = Array.new
 	
 	sections.each do |section|
-		section.professors.each do |prof|
-			a.push prof._id unless a.include? prof._id
-		end
+		b = section.professor
+		a.push b unless a.include? b
+		
 	end
 	
 	a

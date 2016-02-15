@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
 		respond_to do |format|
 			if @student.save
 				format.html { redirect_to @student, notice: 'Student was successfully created.' }
-				format.json { render json: Student.all }
+				format.json { @students = Student.all }
 			else
 				format.html { render :new }
 				format.json { render json: @student.errors, status: :unprocessable_entity }
@@ -47,9 +47,12 @@ class StudentsController < ApplicationController
 	
 	# POST /students/1/enroll
 	def enroll
-		@section = Section.find(prams[:section_id])
-		section.students << @student
+		@section = Section.find(params[:section_id])
+		@section.students << @student
 		
+		respond_to do
+			render json: Student.all
+		end
 		
 	end
 	
