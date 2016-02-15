@@ -51,7 +51,7 @@ class StudentsController < ApplicationController
 		@section.students << @student
 		
 		respond_to do
-			render json: Student.all
+			@students = Student.all
 		end
 		
 	end
